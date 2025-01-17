@@ -1,5 +1,13 @@
 import streamlit as st
 from auth import Auth
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Override the environment variable with the value from .env if it exists
+if 'OPENAI_API_KEY' not in os.environ:
+    os.environ['OPENAI_API_KEY'] = os.getenv("OPENAI_API_KEY")
 
 st.set_page_config(
     page_title="Document Chat System",

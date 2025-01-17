@@ -28,7 +28,7 @@ def main():
     if current_doc:
         st.info(f"Current active document: {current_doc['filename']}")
     
-    uploaded_file = st.file_uploader("Upload New Document", type=['txt'])
+    uploaded_file = st.file_uploader("Upload New Document", type=['txt', 'pdf'])
     
     if uploaded_file and st.button("Process Document"):
         with st.spinner("Processing document..."):
